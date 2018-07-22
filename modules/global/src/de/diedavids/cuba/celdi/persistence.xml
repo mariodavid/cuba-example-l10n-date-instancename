@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             version="2.0">
+    <persistence-unit name="cuba-example-l10n-date-instancename"
+                      transaction-type="RESOURCE_LOCAL">
+        <class>de.diedavids.cuba.celdi.entity.Customer</class>
+        <class>de.diedavids.cuba.celdi.entity.Order</class>
+    </persistence-unit>
+</persistence>

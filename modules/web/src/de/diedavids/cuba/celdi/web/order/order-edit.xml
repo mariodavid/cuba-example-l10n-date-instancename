@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="de.diedavids.cuba.celdi.web.order.OrderEdit"
+        datasource="orderDs"
+        focusComponent="fieldGroup"
+        messagesPack="de.diedavids.cuba.celdi.web.order">
+    <dsContext>
+        <datasource id="orderDs"
+                    class="de.diedavids.cuba.celdi.entity.Order"
+                    view="order-view"/>
+        <collectionDatasource id="customersDs"
+                              class="de.diedavids.cuba.celdi.entity.Customer"
+                              view="_minimal">
+            <query>
+                <![CDATA[select e from celdi$Customer e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="orderDs">
+            <column width="250px">
+                <field property="orderDate"/>
+                <field optionsDatasource="customersDs"
+                       property="customer"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>
